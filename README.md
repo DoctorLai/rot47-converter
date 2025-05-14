@@ -22,8 +22,8 @@ To run the tool locally:
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/doctorlai/rot47-cipher.git  
-cd rot47-cipher
+git clone https://github.com/doctorlai/rot47-converter.git  
+cd rot47-converter
 ```
 
 2. Install dependencies:
@@ -47,7 +47,7 @@ Use `prettier --check` or `prettier --write` to check or format the code.
 npm run format
 ```
 
-6. Visit [http://localhost:5173/rot47-cipher/](http://localhost:5173/rot47-cipher/) to start using the tool locally.
+6. Visit [http://localhost:5173/rot47-converter/](http://localhost:5173/rot47-converter/) to start using the tool locally.
 
 ## Usage
 

@@ -5,8 +5,8 @@ import { useState, useEffect } from "react";
 export default function App() {
   const [darkMode, setDarkMode] = useState(() => {
     // Load initial value from localStorage
-    const saved = localStorage.getItem('darkMode');
-    return saved === 'true'; // convert string to boolean
+    const saved = localStorage.getItem("darkMode");
+    return saved === "true"; // convert string to boolean
   });
 
   const [text, setText] = useState("");
@@ -21,11 +21,11 @@ export default function App() {
 
   const clearText = () => {
     setText("");
-  }
+  };
 
   // Handle Tab key functionality
   const handleTab = (e) => {
-    if (e.key === 'Tab') {
+    if (e.key === "Tab") {
       e.preventDefault();
 
       const textarea = e.target;
@@ -34,7 +34,7 @@ export default function App() {
 
       // Insert two spaces at the cursor position
       const newText =
-        textarea.value.slice(0, start) + '  ' + textarea.value.slice(end);
+        textarea.value.slice(0, start) + "  " + textarea.value.slice(end);
 
       setText(newText);
 
@@ -43,7 +43,7 @@ export default function App() {
         textarea.selectionStart = textarea.selectionEnd = start + 2;
       });
     }
-  };  
+  };
 
   return (
     <div className={darkMode ? "app dark" : "app"}>
@@ -66,56 +66,56 @@ export default function App() {
       </div>
 
       <footer
-        style={{ textAlign: 'center', marginTop: '2rem', fontSize: '1rem' }}
+        style={{ textAlign: "center", marginTop: "2rem", fontSize: "1rem" }}
       >
-      <div className='footer'>
-        <p>
-          Made with ❤️ by{' '}
-          <a
-            href='https://github.com/doctorlai'
-            target='_blank'
-            rel='noopener noreferrer'
-            style={{ textDecoration: 'none', fontWeight: 'bold' }}
-          >
-            @justyy
-          </a>
-        </p>
-        <p>
-          If you found this useful, consider buying me a{' '}
-          <a
-            href='https://justyy.com/out/bmc'
-            target='_blank'
-            rel='noopener noreferrer'
-            style={{ color: '#007bff', textDecoration: 'underline' }}
-          >
-            coffee
-          </a>{' '}
-          ☕
-        </p>
-        <p>
-          Open Source on{' '}
-          <a
-            href='https://github.com/DoctorLai/rot47-converter'
-            target='_blank'
-            rel='noopener noreferrer'
-            style={{ color: '#007bff', textDecoration: 'underline' }}
-          >
-            GitHub
-          </a>
-        </p>
-        <p>
-          Alternatively:{' '}
-          <a
-            href='https://rot47.net/'
-            target='_blank'
-            rel='noopener noreferrer'
-            style={{ color: '#007bff', textDecoration: 'underline' }}
-          >
-            ROT47 Cipher
-          </a>
-        </p>
-      </div>
-      </footer> 
-    </div>    
+        <div className="footer">
+          <p>
+            Made with ❤️ by{" "}
+            <a
+              href="https://github.com/doctorlai"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ textDecoration: "none", fontWeight: "bold" }}
+            >
+              @justyy
+            </a>
+          </p>
+          <p>
+            If you found this useful, consider buying me a{" "}
+            <a
+              href="https://justyy.com/out/bmc"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ color: "#007bff", textDecoration: "underline" }}
+            >
+              coffee
+            </a>{" "}
+            ☕
+          </p>
+          <p>
+            Open Source on{" "}
+            <a
+              href="https://github.com/DoctorLai/rot47-converter"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ color: "#007bff", textDecoration: "underline" }}
+            >
+              GitHub
+            </a>
+          </p>
+          <p>
+            Alternatively:{" "}
+            <a
+              href="https://rot47.net/"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ color: "#007bff", textDecoration: "underline" }}
+            >
+              ROT47 Cipher
+            </a>
+          </p>
+        </div>
+      </footer>
+    </div>
   );
 }
