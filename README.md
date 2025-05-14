@@ -12,7 +12,7 @@ A simple web-based tool to encode and decode text using the [ROT47 cipher](https
 
 ## Live Demo
 
-The live demo is deployed to: [GitHub Page: ROT47 Cipher Tool](https://doctorlai.github.io/rot47-converter)
+The live demo is deployed to: [GitHub Page: ROT47 Cipher Tool](https://doctorlai.github.io/rot47-converter/)
 
 Please note: this is the open source version of this online tool: [ROT47 Online Cipher](https://rot47.net/)
 
