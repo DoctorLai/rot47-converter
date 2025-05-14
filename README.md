@@ -1,4 +1,5 @@
 # ROT47 Cipher Tool  
+[![ROT47 Converter (Built, Lint and Test)](https://github.com/DoctorLai/rot47-converter/actions/workflows/ci.yaml/badge.svg)](https://github.com/DoctorLai/rot47-converter/actions/workflows/ci.yaml)
 
 A simple web-based tool to encode and decode text using the [ROT47 cipher](https://en.wikipedia.org/wiki/ROT47). This app is built using React and runs entirely in the browser. It provides a single text area and a button—type or paste your text and convert it with a click!
 
@@ -13,6 +14,8 @@ A simple web-based tool to encode and decode text using the [ROT47 cipher](https
 ## Live Demo
 
 The live demo is deployed to: [GitHub Page: ROT47 Cipher Tool](https://doctorlai.github.io/rot47-converter/)
+
+![image](https://github.com/user-attachments/assets/6d2593cd-4623-44f5-9f92-8bed2a508643)
 
 Please note: this is the open source version of this online tool: [ROT47 Online Cipher](https://rot47.net/)
 
