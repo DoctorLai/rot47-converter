@@ -1,4 +1,4 @@
-# ROT47 Cipher Tool  
+# ROT47 Cipher Tool
 [![ROT47 Converter (Built, Lint and Test)](https://github.com/DoctorLai/rot47-converter/actions/workflows/ci.yaml/badge.svg)](https://github.com/DoctorLai/rot47-converter/actions/workflows/ci.yaml)
 
 A simple web-based tool to encode and decode text using the [ROT47 cipher](https://en.wikipedia.org/wiki/ROT47). This app is built using React and runs entirely in the browser. It provides a single text area and a button—type or paste your text and convert it with a click!
@@ -25,7 +25,7 @@ To run the tool locally:
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/doctorlai/rot47-converter.git  
+git clone https://github.com/doctorlai/rot47-converter.git
 cd rot47-converter
 ```
 
@@ -44,8 +44,8 @@ npm run dev
 npm run test
 ```
 
-5. Format Code:  
-Use `prettier --check` or `prettier --write` to check or format the code.  
+5. Format Code:
+Use `prettier --check` or `prettier --write` to check or format the code.
 ```bash
 npm run format
 ```
@@ -54,8 +54,8 @@ npm run format
 
 ## Usage
 
-1. **Enter your text** in the input box.  
-2. **Click "ROT47"** to encode or decode using the ROT47 cipher.  
+1. **Enter your text** in the input box.
+2. **Click "ROT47"** to encode or decode using the ROT47 cipher.
 3. The result will replace the current content in the same box.
 
 You can also switch between **Light Mode** and **Dark Mode** using the toggle button.
@@ -64,18 +64,18 @@ You can also switch between **Light Mode** and **Dark Mode** using the toggle bu
 
 Feel free to fork this project and submit issues or pull requests for improvements!
 
-1. Fork the repository.  
-2. Create a feature branch:  
+1. Fork the repository.
+2. Create a feature branch:
 ```bash
-git checkout -b feature-branch  
+git checkout -b feature-branch
 ```
-3. Commit your changes:  
+3. Commit your changes:
 ```bash
-git commit -am 'Add new feature'  
+git commit -am 'Add new feature'
 ```
-4. Push to the branch:  
+4. Push to the branch:
 ```bash
-git push origin feature-branch  
+git push origin feature-branch
 ```
 5. Open a pull request.
 
@@ -83,8 +83,13 @@ git push origin feature-branch
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
+## Documentation
+
+Here is the [AI generated wiki](https://deepwiki.com/DoctorLai/rot47-converter)
+
 ## Acknowledgments
 
-- Built with ❤️ by [@justyy](https://github.com/doctorlai)  
+- Built with ❤️ by [@justyy](https://github.com/doctorlai)
 - Initial Boilerplate code contributed by ChatGPT-4o and o4-mini.
 - If you found this tool useful, consider buying me a [coffee](https://justyy.com/out/bmc) ☕
+
