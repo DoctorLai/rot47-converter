@@ -48,6 +48,8 @@ npm run test
 Use `prettier --check` or `prettier --write` to check or format the code.
 ```bash
 npm run format
+## Fix automatically the coding style
+npm run format:fix
 ```
 
 6. Visit [http://localhost:5173/rot47-converter/](http://localhost:5173/rot47-converter/) to start using the tool locally.
