@@ -9,7 +9,7 @@ export default function App() {
     return saved === "true"; // convert string to boolean
   });
 
-  const [text, setText] = useState("");
+  const [text, setText] = useState("w6==@[ (@C=5P");
 
   useEffect(() => {
     localStorage.setItem("darkMode", darkMode);
@@ -50,14 +50,13 @@ export default function App() {
       <button onClick={() => setDarkMode(!darkMode)}>
         {darkMode ? "🌞 Light Mode" : "🌙 Dark Mode"}
       </button>
-      <div style={{ padding: "1rem", fontFamily: "sans-serif" }}>
+      <div>
         <h1>ROT47 Cipher Encoder/Decoder</h1>
         <textarea
           value={text}
           onChange={(e) => setText(e.target.value)}
           onKeyDown={handleTab} // Add the keydown event handler
           placeholder="Enter your text here..."
-          style={{ width: "99%", height: "300px", marginBottom: "1rem" }}
         />
         <div>
           <button onClick={handleTransform}>🔁 Apply ROT47</button>
@@ -65,9 +64,7 @@ export default function App() {
         </div>
       </div>
 
-      <footer
-        style={{ textAlign: "center", marginTop: "2rem", fontSize: "1rem" }}
-      >
+      <footer>
         <div className="footer">
           <p>
             Made with ❤️ by{" "}
@@ -75,7 +72,6 @@ export default function App() {
               href="https://github.com/doctorlai"
               target="_blank"
               rel="noopener noreferrer"
-              style={{ textDecoration: "none", fontWeight: "bold" }}
             >
               @justyy
             </a>
@@ -86,7 +82,6 @@ export default function App() {
               href="https://justyy.com/out/bmc"
               target="_blank"
               rel="noopener noreferrer"
-              style={{ color: "#007bff", textDecoration: "underline" }}
             >
               coffee
             </a>{" "}
@@ -98,7 +93,6 @@ export default function App() {
               href="https://github.com/DoctorLai/rot47-converter"
               target="_blank"
               rel="noopener noreferrer"
-              style={{ color: "#007bff", textDecoration: "underline" }}
             >
               GitHub
             </a>
@@ -109,7 +103,6 @@ export default function App() {
               href="https://rot47.net/"
               target="_blank"
               rel="noopener noreferrer"
-              style={{ color: "#007bff", textDecoration: "underline" }}
             >
               ROT47 Cipher
             </a>
