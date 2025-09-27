@@ -64,6 +64,19 @@ export default function App() {
         </div>
       </div>
 
+      <div>
+        <a href="https://rot47.net" target="_blank">
+          ROT47
+        </a>{" "}
+        is a simple substitution cipher that shifts each printable ASCII
+        character 47 places, effectively scrambling text while preserving
+        character readability. Because the alphabet of 94 printable ASCII
+        characters is rotated by half its size (47), a double rotation always
+        cancels itself out. ROT47 is a lightweight text obfuscation method.
+        <br />
+        That is: <code>rot47(rot47(x)) = x</code>
+      </div>
+
       <footer>
         <div className="footer">
           <p>
