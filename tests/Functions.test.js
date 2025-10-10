@@ -13,4 +13,25 @@ describe("ROT47 Converter", () => {
     const output = rot47(input);
     expect(output).toBe("Hello, World!");
   });
+
+  it("handles empty string", () => {
+    const input = "";
+    const output = rot47(input);
+    expect(output).toBe("");
+  });
+
+  it("handles string with no ROT47 characters", () => {
+    const input = "12345";
+    const output = rot47(input);
+    expect(output).toBe("`abcd");
+  });
+
+  it("handles full ASCII range", () => {
+    const input = String.fromCharCode(
+      ...Array.from({ length: 95 }, (_, i) => i + 33),
+    );
+    const output = rot47(input);
+    const reverted = rot47(output);
+    expect(reverted).toBe(input);
+  });
 });
