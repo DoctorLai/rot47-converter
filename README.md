@@ -41,10 +41,16 @@ npm run dev
 
 4. Tests:
 ```bash
+## or simply: npm test
 npm run test
 ```
 
-5. Format Code:
+5. Test coverage:
+```bash
+npx vitest run --coverage
+```
+
+6. Format Code:
 Use `prettier --check` or `prettier --write` to check or format the code.
 ```bash
 npm run format
@@ -83,7 +89,7 @@ git push origin feature-branch
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License - see the [LICENSE](./LICENSE) file for details.
 
 ## Documentation
 
