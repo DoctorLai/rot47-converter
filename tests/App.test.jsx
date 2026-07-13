@@ -1,4 +1,10 @@
-import { render, screen, fireEvent, cleanup } from "@testing-library/react";
+import {
+  render,
+  screen,
+  fireEvent,
+  cleanup,
+  act,
+} from "@testing-library/react";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import App from "../src/App";
 
@@ -13,6 +19,7 @@ describe("App", () => {
 
   afterEach(() => {
     cleanup();
+    vi.useRealTimers();
     vi.unstubAllEnvs();
     vi.restoreAllMocks();
   });
@@ -26,7 +33,9 @@ describe("App", () => {
 
   it("shows the initial demo text and its character count", () => {
     render(<App />);
-    const textarea = screen.getByRole("textbox");
+    const textarea = screen.getByRole("textbox", {
+      name: /ROT47 Cipher Encoder\/Decoder/i,
+    });
     expect(textarea).toHaveValue("w6==@[ (@C=5P");
     expect(screen.getByText(/13 characters/)).toBeInTheDocument();
   });
@@ -100,6 +109,27 @@ describe("App", () => {
     expect(
       await screen.findByRole("button", { name: /Copied/i }),
     ).toBeInTheDocument();
+  });
+
+  it("clears pending copy feedback timers when unmounted", async () => {
+    vi.useFakeTimers();
+    const clearTimeoutSpy = vi.spyOn(globalThis, "clearTimeout");
+    const writeText = vi.fn().mockResolvedValue(undefined);
+    Object.defineProperty(navigator, "clipboard", {
+      value: { writeText },
+      configurable: true,
+    });
+    const { unmount } = render(<App />);
+
+    await act(async () => {
+      fireEvent.click(screen.getByRole("button", { name: /^📋 Copy/i }));
+    });
+
+    const clearTimeoutCallsBeforeUnmount = clearTimeoutSpy.mock.calls.length;
+    unmount();
+    expect(clearTimeoutSpy.mock.calls.length).toBeGreaterThan(
+      clearTimeoutCallsBeforeUnmount,
+    );
   });
 
   it("handles clipboard failures gracefully", async () => {

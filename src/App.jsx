@@ -1,7 +1,7 @@
 import "./App.css";
 import { rot47 } from "./functions";
 import { translate, detectLanguage, isRTL, languageOptions } from "./i18n";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 export default function App() {
   const [darkMode, setDarkMode] = useState(() => {
@@ -16,6 +16,7 @@ export default function App() {
 
   const [text, setText] = useState("w6==@[ (@C=5P");
   const [copied, setCopied] = useState(false);
+  const copiedResetTimeoutRef = useRef(null);
 
   // Translate a key using the currently selected language.
   const t = (key) => translate(lang, key);
@@ -30,6 +31,14 @@ export default function App() {
     document.documentElement.dir = isRTL(lang) ? "rtl" : "ltr";
   }, [lang]);
 
+  useEffect(() => {
+    return () => {
+      if (copiedResetTimeoutRef.current) {
+        clearTimeout(copiedResetTimeoutRef.current);
+      }
+    };
+  }, []);
+
   const handleTransform = () => {
     setText(rot47(text));
   };
@@ -41,8 +50,14 @@ export default function App() {
   const handleCopy = async () => {
     try {
       await navigator.clipboard.writeText(text);
+      if (copiedResetTimeoutRef.current) {
+        clearTimeout(copiedResetTimeoutRef.current);
+      }
       setCopied(true);
-      setTimeout(() => setCopied(false), 2000);
+      copiedResetTimeoutRef.current = setTimeout(() => {
+        setCopied(false);
+        copiedResetTimeoutRef.current = null;
+      }, 2000);
     } catch {
       // Clipboard API is unavailable (e.g. insecure context); ignore.
     }
@@ -98,6 +113,7 @@ export default function App() {
         <h1>{t("title")}</h1>
         <textarea
           value={text}
+          aria-label={t("title")}
           onChange={(e) => setText(e.target.value)}
           onKeyDown={handleKeyDown}
           placeholder={t("placeholder")}
