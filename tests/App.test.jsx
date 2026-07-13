@@ -54,6 +54,24 @@ describe("App", () => {
     expect(textarea).toHaveValue("");
   });
 
+  it("persists the text to localStorage and restores it", () => {
+    const { unmount } = render(<App />);
+    fireEvent.change(screen.getByRole("textbox"), {
+      target: { value: "remember me" },
+    });
+    expect(localStorage.getItem("rot47:text")).toBe("remember me");
+
+    unmount();
+    render(<App />);
+    expect(screen.getByRole("textbox")).toHaveValue("remember me");
+  });
+
+  it("restores an empty text box from localStorage", () => {
+    localStorage.setItem("rot47:text", "");
+    render(<App />);
+    expect(screen.getByRole("textbox")).toHaveValue("");
+  });
+
   it("inserts two spaces when Tab is pressed", () => {
     render(<App />);
     const textarea = screen.getByRole("textbox");
@@ -85,11 +103,11 @@ describe("App", () => {
     expect(app).not.toHaveClass("dark");
     fireEvent.click(screen.getByRole("button", { name: /Dark Mode/i }));
     expect(document.querySelector(".app")).toHaveClass("dark");
-    expect(localStorage.getItem("darkMode")).toBe("true");
+    expect(localStorage.getItem("rot47:darkMode")).toBe("true");
   });
 
   it("restores dark mode from localStorage", () => {
-    localStorage.setItem("darkMode", "true");
+    localStorage.setItem("rot47:darkMode", "true");
     render(<App />);
     expect(document.querySelector(".app")).toHaveClass("dark");
     expect(
@@ -155,7 +173,7 @@ describe("App", () => {
     expect(screen.getByRole("heading", { level: 1 })).toHaveTextContent(
       "Codificador/Decodificador de cifrado ROT47",
     );
-    expect(localStorage.getItem("lang")).toBe("es");
+    expect(localStorage.getItem("rot47:lang")).toBe("es");
   });
 
   it("sets text direction to RTL for right-to-left languages", () => {

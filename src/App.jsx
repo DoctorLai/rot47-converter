@@ -3,18 +3,31 @@ import { rot47 } from "./functions";
 import { translate, detectLanguage, isRTL, languageOptions } from "./i18n";
 import { useState, useEffect, useRef } from "react";
 
+// localStorage keys are namespaced with a "rot47:" prefix so they don't collide
+// with other apps served from the same origin (GitHub Pages project sites all
+// share https://<user>.github.io).
+const STORAGE_KEYS = {
+  darkMode: "rot47:darkMode",
+  lang: "rot47:lang",
+  text: "rot47:text",
+};
+
 export default function App() {
   const [darkMode, setDarkMode] = useState(() => {
     // Load initial value from localStorage
-    const saved = localStorage.getItem("darkMode");
+    const saved = localStorage.getItem(STORAGE_KEYS.darkMode);
     return saved === "true"; // convert string to boolean
   });
 
   const [lang, setLang] = useState(() =>
-    detectLanguage(localStorage.getItem("lang"), navigator.language),
+    detectLanguage(localStorage.getItem(STORAGE_KEYS.lang), navigator.language),
   );
 
-  const [text, setText] = useState("w6==@[ (@C=5P");
+  const [text, setText] = useState(() => {
+    // Restore the previously entered text, falling back to the demo text.
+    const saved = localStorage.getItem(STORAGE_KEYS.text);
+    return saved !== null ? saved : "w6==@[ (@C=5P";
+  });
   const [copied, setCopied] = useState(false);
   const copiedResetTimeoutRef = useRef(null);
 
@@ -22,11 +35,15 @@ export default function App() {
   const t = (key) => translate(lang, key);
 
   useEffect(() => {
-    localStorage.setItem("darkMode", darkMode);
+    localStorage.setItem(STORAGE_KEYS.darkMode, darkMode);
   }, [darkMode]);
 
   useEffect(() => {
-    localStorage.setItem("lang", lang);
+    localStorage.setItem(STORAGE_KEYS.text, text);
+  }, [text]);
+
+  useEffect(() => {
+    localStorage.setItem(STORAGE_KEYS.lang, lang);
     document.documentElement.lang = lang;
     document.documentElement.dir = isRTL(lang) ? "rtl" : "ltr";
   }, [lang]);
