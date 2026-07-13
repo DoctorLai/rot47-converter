@@ -1,0 +1,22 @@
+{
+  "languageName": "English",
+  "title": "ROT47 Cipher Encoder/Decoder",
+  "darkMode": "🌙 Dark Mode",
+  "lightMode": "🌞 Light Mode",
+  "apply": "🔁 Apply ROT47",
+  "clear": "🧹 Clear",
+  "copy": "📋 Copy",
+  "copied": "✅ Copied!",
+  "placeholder": "Enter your text here...",
+  "charCount": "characters",
+  "languageLabel": "🌐 Language",
+  "versionLabel": "Version",
+  "doubleRotation": "That is:",
+  "learnMore": "Learn more about ROT47 →",
+  "description": "ROT47 is a simple substitution cipher that shifts each printable ASCII character 47 places, effectively scrambling text while preserving character readability. Because the alphabet of 94 printable ASCII characters is rotated by half its size (47), a double rotation always cancels itself out. ROT47 is a lightweight text obfuscation method.",
+  "madeWith": "Made with ❤️ by",
+  "coffeePrompt": "If you found this useful, consider buying me a",
+  "coffee": "coffee",
+  "openSource": "Open Source on",
+  "alternatively": "Alternatively:"
+}

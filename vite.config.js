@@ -1,26 +1,12 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
 
-export default defineConfig(({ command }) => ({
-  base: '/rot47-converter/',
+// https://vitejs.dev/config/
+// Test configuration lives in vitest.config.js.
+export default defineConfig({
+  base: "/rot47-converter/",
   plugins: [react()],
   build: {
-    outDir: 'dist',
+    outDir: "dist",
   },
-  test: {
-    globals: true,
-    environment: "jsdom",
-    setupFiles: "./tests/test.setup.js",
-  },
-  define: {
-    'process.env': {},
-  },
-  optimizeDeps: {
-    include: ['crypto-browserify']
-  },
-  resolve: {
-    alias: {
-      'crypto': 'crypto-browserify'
-    }
-  },
-}))
+});

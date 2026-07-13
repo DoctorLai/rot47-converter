@@ -1,0 +1,21 @@
+{
+  "languageName": "Svenska",
+  "title": "ROT47-chiffer kodare/avkodare",
+  "darkMode": "🌙 Mörkt läge",
+  "lightMode": "🌞 Ljust läge",
+  "apply": "🔁 Tillämpa ROT47",
+  "clear": "🧹 Rensa",
+  "copy": "📋 Kopiera",
+  "copied": "✅ Kopierat!",
+  "placeholder": "Skriv din text här...",
+  "charCount": "tecken",
+  "languageLabel": "🌐 Språk",
+  "versionLabel": "Version",
+  "doubleRotation": "Det vill säga:",
+  "learnMore": "Läs mer om ROT47 →",
+  "madeWith": "Skapad med ❤️ av",
+  "coffeePrompt": "Om du tyckte detta var användbart, bjud mig på en",
+  "coffee": "kaffe",
+  "openSource": "Öppen källkod på",
+  "alternatively": "Alternativt:"
+}

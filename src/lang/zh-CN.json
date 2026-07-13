@@ -1,0 +1,22 @@
+{
+  "languageName": "简体中文",
+  "title": "ROT47 密码编码器/解码器",
+  "darkMode": "🌙 深色模式",
+  "lightMode": "🌞 浅色模式",
+  "apply": "🔁 应用 ROT47",
+  "clear": "🧹 清除",
+  "copy": "📋 复制",
+  "copied": "✅ 已复制！",
+  "placeholder": "在此输入文本……",
+  "charCount": "个字符",
+  "languageLabel": "🌐 语言",
+  "versionLabel": "版本",
+  "doubleRotation": "也就是说：",
+  "learnMore": "了解更多关于 ROT47 →",
+  "description": "ROT47 是一种简单的替换密码，它将每个可打印的 ASCII 字符移动 47 位，在打乱文本的同时保持字符的可读性。由于由 94 个可打印 ASCII 字符组成的字母表被旋转了其大小的一半（47），因此两次旋转总会相互抵消。ROT47 是一种轻量级的文本混淆方法。",
+  "madeWith": "由 ❤️ 制作，作者",
+  "coffeePrompt": "如果你觉得有用，可以请我喝一杯",
+  "coffee": "咖啡",
+  "openSource": "开源于",
+  "alternatively": "或者："
+}

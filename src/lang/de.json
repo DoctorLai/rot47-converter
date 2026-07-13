@@ -1,0 +1,22 @@
+{
+  "languageName": "Deutsch",
+  "title": "ROT47-Chiffre-Encoder/Decoder",
+  "darkMode": "🌙 Dunkelmodus",
+  "lightMode": "🌞 Hellmodus",
+  "apply": "🔁 ROT47 anwenden",
+  "clear": "🧹 Löschen",
+  "copy": "📋 Kopieren",
+  "copied": "✅ Kopiert!",
+  "placeholder": "Geben Sie hier Ihren Text ein...",
+  "charCount": "Zeichen",
+  "languageLabel": "🌐 Sprache",
+  "versionLabel": "Version",
+  "doubleRotation": "Das heißt:",
+  "learnMore": "Mehr über ROT47 erfahren →",
+  "description": "ROT47 ist eine einfache Substitutions-Chiffre, die jedes druckbare ASCII-Zeichen um 47 Stellen verschiebt und den Text so verschlüsselt, während die Lesbarkeit der Zeichen erhalten bleibt. Da das Alphabet aus 94 druckbaren ASCII-Zeichen um die Hälfte seiner Größe (47) gedreht wird, hebt sich eine doppelte Drehung immer selbst auf. ROT47 ist eine leichtgewichtige Methode zur Textverschleierung.",
+  "madeWith": "Mit ❤️ erstellt von",
+  "coffeePrompt": "Wenn dir das nützlich war, spendiere mir einen",
+  "coffee": "Kaffee",
+  "openSource": "Open Source auf",
+  "alternatively": "Alternativ:"
+}

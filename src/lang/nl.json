@@ -1,0 +1,21 @@
+{
+  "languageName": "Nederlands",
+  "title": "ROT47-cijfer encoder/decoder",
+  "darkMode": "🌙 Donkere modus",
+  "lightMode": "🌞 Lichte modus",
+  "apply": "🔁 ROT47 toepassen",
+  "clear": "🧹 Wissen",
+  "copy": "📋 Kopiëren",
+  "copied": "✅ Gekopieerd!",
+  "placeholder": "Voer hier je tekst in...",
+  "charCount": "tekens",
+  "languageLabel": "🌐 Taal",
+  "versionLabel": "Versie",
+  "doubleRotation": "Dat wil zeggen:",
+  "learnMore": "Meer over ROT47 →",
+  "madeWith": "Gemaakt met ❤️ door",
+  "coffeePrompt": "Als je dit nuttig vond, trakteer me dan op een",
+  "coffee": "koffie",
+  "openSource": "Open source op",
+  "alternatively": "Alternatief:"
+}

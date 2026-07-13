@@ -1,0 +1,21 @@
+{
+  "languageName": "ไทย",
+  "title": "ตัวเข้ารหัส/ถอดรหัส ROT47",
+  "darkMode": "🌙 โหมดมืด",
+  "lightMode": "🌞 โหมดสว่าง",
+  "apply": "🔁 ใช้ ROT47",
+  "clear": "🧹 ล้าง",
+  "copy": "📋 คัดลอก",
+  "copied": "✅ คัดลอกแล้ว!",
+  "placeholder": "ป้อนข้อความของคุณที่นี่...",
+  "charCount": "ตัวอักษร",
+  "languageLabel": "🌐 ภาษา",
+  "versionLabel": "เวอร์ชัน",
+  "doubleRotation": "นั่นคือ:",
+  "learnMore": "เรียนรู้เพิ่มเติมเกี่ยวกับ ROT47 →",
+  "madeWith": "สร้างด้วย ❤️ โดย",
+  "coffeePrompt": "หากคุณพบว่ามีประโยชน์ โปรดเลี้ยง",
+  "coffee": "กาแฟ",
+  "openSource": "โอเพนซอร์สบน",
+  "alternatively": "หรืออีกทางเลือกหนึ่ง:"
+}
