@@ -1,0 +1,22 @@
+{
+  "languageName": "Français",
+  "title": "Encodeur/Décodeur de chiffrement ROT47",
+  "darkMode": "🌙 Mode sombre",
+  "lightMode": "🌞 Mode clair",
+  "apply": "🔁 Appliquer ROT47",
+  "clear": "🧹 Effacer",
+  "copy": "📋 Copier",
+  "copied": "✅ Copié !",
+  "placeholder": "Saisissez votre texte ici...",
+  "charCount": "caractères",
+  "languageLabel": "🌐 Langue",
+  "versionLabel": "Version",
+  "doubleRotation": "C'est-à-dire :",
+  "learnMore": "En savoir plus sur ROT47 →",
+  "description": "ROT47 est un chiffrement par substitution simple qui décale chaque caractère ASCII imprimable de 47 positions, brouillant efficacement le texte tout en préservant la lisibilité des caractères. Comme l'alphabet de 94 caractères ASCII imprimables est pivoté de la moitié de sa taille (47), une double rotation s'annule toujours. ROT47 est une méthode légère d'obfuscation de texte.",
+  "madeWith": "Fait avec ❤️ par",
+  "coffeePrompt": "Si cela vous a été utile, offrez-moi un",
+  "coffee": "café",
+  "openSource": "Open source sur",
+  "alternatively": "Autrement :"
+}

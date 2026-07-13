@@ -5,7 +5,9 @@
   font-family: sans-serif;
   min-height: 100vh;
   padding: 1rem;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
 }
 
 .app.dark {
@@ -50,6 +52,74 @@ button {
   border-radius: 7px;
 }
 
+/* ========== Links ========== */
+.app a {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.app a:hover {
+  color: #0056b3;
+  text-decoration: underline;
+}
+
+/* In dark mode, links are yellow for better contrast. */
+.app.dark a {
+  color: #ffd700;
+}
+
+.app.dark a:hover {
+  color: #ffe14d;
+}
+
+/* ========== Toolbar ========== */
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.language-select {
+  font-size: 0.95rem;
+}
+
+.language-select select {
+  margin-left: 0.35rem;
+  padding: 0.35rem 0.5rem;
+  font-size: 0.95rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: #fff;
+  color: #000;
+  cursor: pointer;
+}
+
+.app.dark .language-select select {
+  background-color: #1e1e1e;
+  color: #eee;
+  border: 1px solid #444;
+}
+
+/* ========== Character count ========== */
+.char-count {
+  margin: 0 0 1rem;
+  font-size: 0.85rem;
+  color: #777;
+}
+
+.app.dark .char-count {
+  color: #aaa;
+}
+
+/* ========== Description ========== */
+.description {
+  margin-top: 1.5rem;
+  line-height: 1.6;
+}
+
 /* ========== Footer ========== */
 footer {
   text-align: left;
@@ -62,16 +132,35 @@ footer p {
   color: #555;
 }
 
+.app.dark footer p {
+  color: #bbb;
+}
+
 footer a {
-  text-decoration: none;
   font-weight: bold;
-  color: #007bff;
 }
 
-footer a:hover {
-  color: #0056b3;
+.version {
+  font-size: 0.8rem;
+  color: #888 !important;
 }
 
-footer a.link {
-  text-decoration: underline;
+/* ========== RTL support ========== */
+[dir="rtl"] .app,
+.app[dir="rtl"] {
+  text-align: right;
+}
+
+[dir="rtl"] footer {
+  text-align: right;
+}
+
+[dir="rtl"] button {
+  margin-right: 0;
+  margin-left: 1rem;
+}
+
+[dir="rtl"] .language-select select {
+  margin-left: 0;
+  margin-right: 0.35rem;
 }

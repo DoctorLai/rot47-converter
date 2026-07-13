@@ -1,0 +1,22 @@
+{
+  "languageName": "한국어",
+  "title": "ROT47 암호 인코더/디코더",
+  "darkMode": "🌙 다크 모드",
+  "lightMode": "🌞 라이트 모드",
+  "apply": "🔁 ROT47 적용",
+  "clear": "🧹 지우기",
+  "copy": "📋 복사",
+  "copied": "✅ 복사됨!",
+  "placeholder": "여기에 텍스트를 입력하세요...",
+  "charCount": "자",
+  "languageLabel": "🌐 언어",
+  "versionLabel": "버전",
+  "doubleRotation": "즉:",
+  "learnMore": "ROT47 자세히 알아보기 →",
+  "description": "ROT47은 인쇄 가능한 각 ASCII 문자를 47자리씩 이동시키는 간단한 치환 암호로, 문자의 가독성을 유지하면서 텍스트를 효과적으로 뒤섞습니다. 94개의 인쇄 가능한 ASCII 문자로 이루어진 문자 집합을 그 절반(47)만큼 회전시키기 때문에 두 번 회전하면 항상 원래대로 돌아옵니다. ROT47은 가벼운 텍스트 난독화 방법입니다.",
+  "madeWith": "❤️으로 만든 사람:",
+  "coffeePrompt": "유용하셨다면 저에게 한 잔의",
+  "coffee": "커피",
+  "openSource": "오픈 소스:",
+  "alternatively": "또는:"
+}

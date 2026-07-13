@@ -1,0 +1,63 @@
+name: Language Badge
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-badge:
+    # Avoid an infinite loop: the badge commit is tagged with [skip ci].
+    if: github.event_name != 'push' || !contains(github.event.head_commit.message, '[skip ci]')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Generate JavaScript percentage badge
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
+        run: |
+          data=$(curl -sf \
+            -H "Accept: application/vnd.github+json" \
+            -H "Authorization: Bearer $GITHUB_TOKEN" \
+            "https://api.github.com/repos/$REPO/languages")
+          echo "Languages: $data"
+          echo "$data" | node -e '
+            let raw = "";
+            process.stdin.on("data", (chunk) => (raw += chunk));
+            process.stdin.on("end", () => {
+              const langs = JSON.parse(raw || "{}");
+              const total = Object.values(langs).reduce((a, b) => a + b, 0) || 1;
+              const pct = ((langs.JavaScript || 0) / total) * 100;
+              const message = pct.toFixed(2) + "%";
+              const color =
+                pct >= 80 ? "brightgreen"
+                : pct >= 60 ? "green"
+                : pct >= 40 ? "yellowgreen"
+                : pct >= 20 ? "yellow"
+                : "orange";
+              const fs = require("fs");
+              fs.mkdirSync(".github/badges", { recursive: true });
+              fs.writeFileSync(
+                ".github/badges/javascript.json",
+                JSON.stringify({ schemaVersion: 1, label: "JavaScript", message, color }) + "\n"
+              );
+            });
+          '
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add .github/badges/javascript.json
+          if git diff --staged --quiet; then
+            echo "No badge changes."
+          else
+            git commit -m "chore: update JavaScript language badge [skip ci]"
+            git push
+          fi

@@ -1,0 +1,21 @@
+{
+  "languageName": "Українська",
+  "title": "Кодувальник/декодувальник шифру ROT47",
+  "darkMode": "🌙 Темна тема",
+  "lightMode": "🌞 Світла тема",
+  "apply": "🔁 Застосувати ROT47",
+  "clear": "🧹 Очистити",
+  "copy": "📋 Копіювати",
+  "copied": "✅ Скопійовано!",
+  "placeholder": "Введіть текст тут...",
+  "charCount": "символів",
+  "languageLabel": "🌐 Мова",
+  "versionLabel": "Версія",
+  "doubleRotation": "Тобто:",
+  "learnMore": "Дізнатися більше про ROT47 →",
+  "madeWith": "Зроблено з ❤️ автором",
+  "coffeePrompt": "Якщо це було корисно, пригостіть мене чашкою",
+  "coffee": "кави",
+  "openSource": "Відкритий код на",
+  "alternatively": "Або:"
+}

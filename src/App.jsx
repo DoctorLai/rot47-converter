@@ -1,5 +1,6 @@
 import "./App.css";
 import { rot47 } from "./functions";
+import { translate, detectLanguage, isRTL, languageOptions } from "./i18n";
 import { useState, useEffect } from "react";
 
 export default function App() {
@@ -9,11 +10,25 @@ export default function App() {
     return saved === "true"; // convert string to boolean
   });
 
+  const [lang, setLang] = useState(() =>
+    detectLanguage(localStorage.getItem("lang"), navigator.language),
+  );
+
   const [text, setText] = useState("w6==@[ (@C=5P");
+  const [copied, setCopied] = useState(false);
+
+  // Translate a key using the currently selected language.
+  const t = (key) => translate(lang, key);
 
   useEffect(() => {
     localStorage.setItem("darkMode", darkMode);
   }, [darkMode]);
+
+  useEffect(() => {
+    localStorage.setItem("lang", lang);
+    document.documentElement.lang = lang;
+    document.documentElement.dir = isRTL(lang) ? "rtl" : "ltr";
+  }, [lang]);
 
   const handleTransform = () => {
     setText(rot47(text));
@@ -23,8 +38,18 @@ export default function App() {
     setText("");
   };
 
-  // Handle Tab key functionality
-  const handleTab = (e) => {
+  const handleCopy = async () => {
+    try {
+      await navigator.clipboard.writeText(text);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch {
+      // Clipboard API is unavailable (e.g. insecure context); ignore.
+    }
+  };
+
+  // Insert two spaces on Tab; apply ROT47 on Ctrl/Cmd + Enter.
+  const handleKeyDown = (e) => {
     if (e.key === "Tab") {
       e.preventDefault();
 
@@ -42,45 +67,69 @@ export default function App() {
       requestAnimationFrame(() => {
         textarea.selectionStart = textarea.selectionEnd = start + 2;
       });
+    } else if ((e.ctrlKey || e.metaKey) && e.key === "Enter") {
+      e.preventDefault();
+      handleTransform();
     }
   };
 
+  const appVersion = import.meta.env.VITE_APP_VERSION;
+  const commitHash = import.meta.env.VITE_COMMIT_HASH;
+
   return (
     <div className={darkMode ? "app dark" : "app"}>
-      <button onClick={() => setDarkMode(!darkMode)}>
-        {darkMode ? "🌞 Light Mode" : "🌙 Dark Mode"}
-      </button>
-      <div>
-        <h1>ROT47 Cipher Encoder/Decoder</h1>
-        <textarea
-          value={text}
-          onChange={(e) => setText(e.target.value)}
-          onKeyDown={handleTab} // Add the keydown event handler
-          placeholder="Enter your text here..."
-        />
-        <div>
-          <button onClick={handleTransform}>🔁 Apply ROT47</button>
-          <button onClick={clearText}>🧹 Clear</button>
-        </div>
+      <div className="toolbar">
+        <button onClick={() => setDarkMode(!darkMode)}>
+          {darkMode ? t("lightMode") : t("darkMode")}
+        </button>
+        <label className="language-select">
+          {t("languageLabel")}{" "}
+          <select value={lang} onChange={(e) => setLang(e.target.value)}>
+            {languageOptions.map(({ code, name }) => (
+              <option key={code} value={code}>
+                {name}
+              </option>
+            ))}
+          </select>
+        </label>
       </div>
 
       <div>
-        <a href="https://rot47.net" target="_blank">
-          ROT47
-        </a>{" "}
-        is a simple substitution cipher that shifts each printable ASCII
-        character 47 places, effectively scrambling text while preserving
-        character readability. Because the alphabet of 94 printable ASCII
-        characters is rotated by half its size (47), a double rotation always
-        cancels itself out. ROT47 is a lightweight text obfuscation method.
-        <br />
-        That is: <code>rot47(rot47(x)) = x</code>
+        <h1>{t("title")}</h1>
+        <textarea
+          value={text}
+          onChange={(e) => setText(e.target.value)}
+          onKeyDown={handleKeyDown}
+          placeholder={t("placeholder")}
+        />
+        <p className="char-count">
+          {text.length} {t("charCount")}
+        </p>
+        <div>
+          <button onClick={handleTransform}>{t("apply")}</button>
+          <button onClick={handleCopy}>
+            {copied ? t("copied") : t("copy")}
+          </button>
+          <button onClick={clearText}>{t("clear")}</button>
+        </div>
+      </div>
+
+      <div className="description">
+        <p>{t("description")}</p>
+        <p>
+          {t("doubleRotation")} <code>rot47(rot47(x)) = x</code>
+        </p>
+        <p>
+          <a href="https://rot47.net" target="_blank" rel="noopener noreferrer">
+            {t("learnMore")}
+          </a>
+        </p>
       </div>
 
       <footer>
         <div className="footer">
           <p>
-            Made with ❤️ by{" "}
+            {t("madeWith")}{" "}
             <a
               href="https://github.com/doctorlai"
               target="_blank"
@@ -90,18 +139,18 @@ export default function App() {
             </a>
           </p>
           <p>
-            If you found this useful, consider buying me a{" "}
+            {t("coffeePrompt")}{" "}
             <a
-              href="https://justyy.com/out/bmc"
+              href="https://www.buymeacoffee.com/y0BtG5R"
               target="_blank"
               rel="noopener noreferrer"
             >
-              coffee
+              {t("coffee")}
             </a>{" "}
             ☕
           </p>
           <p>
-            Open Source on{" "}
+            {t("openSource")}{" "}
             <a
               href="https://github.com/DoctorLai/rot47-converter"
               target="_blank"
@@ -111,7 +160,7 @@ export default function App() {
             </a>
           </p>
           <p>
-            Alternatively:{" "}
+            {t("alternatively")}{" "}
             <a
               href="https://rot47.net/"
               target="_blank"
@@ -120,6 +169,12 @@ export default function App() {
               ROT47 Cipher
             </a>
           </p>
+          {appVersion && (
+            <p className="version">
+              {t("versionLabel")}: {appVersion}
+              {commitHash ? ` (${commitHash})` : ""}
+            </p>
+          )}
         </div>
       </footer>
     </div>

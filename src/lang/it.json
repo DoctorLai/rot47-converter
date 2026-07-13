@@ -1,0 +1,22 @@
+{
+  "languageName": "Italiano",
+  "title": "Codificatore/Decodificatore cifrario ROT47",
+  "darkMode": "🌙 Modalità scura",
+  "lightMode": "🌞 Modalità chiara",
+  "apply": "🔁 Applica ROT47",
+  "clear": "🧹 Cancella",
+  "copy": "📋 Copia",
+  "copied": "✅ Copiato!",
+  "placeholder": "Inserisci qui il tuo testo...",
+  "charCount": "caratteri",
+  "languageLabel": "🌐 Lingua",
+  "versionLabel": "Versione",
+  "doubleRotation": "Ovvero:",
+  "learnMore": "Scopri di più su ROT47 →",
+  "description": "ROT47 è un semplice cifrario a sostituzione che sposta ogni carattere ASCII stampabile di 47 posizioni, mescolando il testo pur mantenendo la leggibilità dei caratteri. Poiché l'alfabeto di 94 caratteri ASCII stampabili viene ruotato della metà della sua dimensione (47), una doppia rotazione si annulla sempre da sola. ROT47 è un metodo leggero di offuscamento del testo.",
+  "madeWith": "Realizzato con ❤️ da",
+  "coffeePrompt": "Se lo hai trovato utile, offrimi un",
+  "coffee": "caffè",
+  "openSource": "Open source su",
+  "alternatively": "In alternativa:"
+}

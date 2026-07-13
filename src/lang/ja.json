@@ -1,0 +1,22 @@
+{
+  "languageName": "日本語",
+  "title": "ROT47 暗号エンコーダー/デコーダー",
+  "darkMode": "🌙 ダークモード",
+  "lightMode": "🌞 ライトモード",
+  "apply": "🔁 ROT47 を適用",
+  "clear": "🧹 クリア",
+  "copy": "📋 コピー",
+  "copied": "✅ コピーしました！",
+  "placeholder": "ここにテキストを入力してください...",
+  "charCount": "文字",
+  "languageLabel": "🌐 言語",
+  "versionLabel": "バージョン",
+  "doubleRotation": "つまり：",
+  "learnMore": "ROT47 について詳しく →",
+  "description": "ROT47 は、印刷可能な各 ASCII 文字を 47 文字分ずらす単純な換字式暗号で、文字の読みやすさを保ちながらテキストを効果的に撹拌します。94 個の印刷可能な ASCII 文字からなる文字集合をその半分（47）だけ回転させるため、2 回回転させると必ず元に戻ります。ROT47 は軽量なテキスト難読化の手法です。",
+  "madeWith": "❤️ を込めて作成：",
+  "coffeePrompt": "お役に立てましたら、ぜひ一杯の",
+  "coffee": "コーヒー",
+  "openSource": "オープンソース：",
+  "alternatively": "または："
+}

@@ -1,0 +1,21 @@
+{
+  "languageName": "Polski",
+  "title": "Koder/Dekoder szyfru ROT47",
+  "darkMode": "🌙 Tryb ciemny",
+  "lightMode": "🌞 Tryb jasny",
+  "apply": "🔁 Zastosuj ROT47",
+  "clear": "🧹 Wyczyść",
+  "copy": "📋 Kopiuj",
+  "copied": "✅ Skopiowano!",
+  "placeholder": "Wpisz swój tekst tutaj...",
+  "charCount": "znaków",
+  "languageLabel": "🌐 Język",
+  "versionLabel": "Wersja",
+  "doubleRotation": "To znaczy:",
+  "learnMore": "Dowiedz się więcej o ROT47 →",
+  "madeWith": "Stworzone z ❤️ przez",
+  "coffeePrompt": "Jeśli to było przydatne, postaw mi",
+  "coffee": "kawę",
+  "openSource": "Otwarte źródło na",
+  "alternatively": "Alternatywnie:"
+}

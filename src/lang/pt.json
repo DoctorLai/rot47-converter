@@ -1,0 +1,22 @@
+{
+  "languageName": "Português",
+  "title": "Codificador/Decodificador da cifra ROT47",
+  "darkMode": "🌙 Modo escuro",
+  "lightMode": "🌞 Modo claro",
+  "apply": "🔁 Aplicar ROT47",
+  "clear": "🧹 Limpar",
+  "copy": "📋 Copiar",
+  "copied": "✅ Copiado!",
+  "placeholder": "Digite seu texto aqui...",
+  "charCount": "caracteres",
+  "languageLabel": "🌐 Idioma",
+  "versionLabel": "Versão",
+  "doubleRotation": "Ou seja:",
+  "learnMore": "Saiba mais sobre o ROT47 →",
+  "description": "ROT47 é uma cifra de substituição simples que desloca cada caractere ASCII imprimível em 47 posições, embaralhando o texto e ao mesmo tempo preservando a legibilidade dos caracteres. Como o alfabeto de 94 caracteres ASCII imprimíveis é girado pela metade do seu tamanho (47), uma dupla rotação sempre se cancela. O ROT47 é um método leve de ofuscação de texto.",
+  "madeWith": "Feito com ❤️ por",
+  "coffeePrompt": "Se isto foi útil, considere me pagar um",
+  "coffee": "café",
+  "openSource": "Código aberto no",
+  "alternatively": "Alternativamente:"
+}

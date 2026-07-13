@@ -1,0 +1,21 @@
+{
+  "languageName": "فارسی",
+  "title": "رمزگذار/رمزگشای ROT47",
+  "darkMode": "🌙 حالت تیره",
+  "lightMode": "🌞 حالت روشن",
+  "apply": "🔁 اعمال ROT47",
+  "clear": "🧹 پاک کردن",
+  "copy": "📋 کپی",
+  "copied": "✅ کپی شد!",
+  "placeholder": "متن خود را اینجا وارد کنید...",
+  "charCount": "نویسه",
+  "languageLabel": "🌐 زبان",
+  "versionLabel": "نسخه",
+  "doubleRotation": "یعنی:",
+  "learnMore": "← درباره ROT47 بیشتر بدانید",
+  "madeWith": "ساخته شده با ❤️ توسط",
+  "coffeePrompt": "اگر این مفید بود، مرا به یک فنجان",
+  "coffee": "قهوه",
+  "openSource": "متن‌باز در",
+  "alternatively": "به‌طور جایگزین:"
+}
