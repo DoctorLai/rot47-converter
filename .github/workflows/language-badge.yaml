@@ -64,8 +64,11 @@ jobs:
             git switch --detach FETCH_HEAD
             git switch -c badges
           else
+            # git switch --orphan empties the working tree and index, so a
+            # following "git rm -rf ." can fail with "did not match any files".
+            # Clear any leftovers defensively without failing when empty.
             git switch --orphan badges
-            git rm -rf .
+            git rm -rf . >/dev/null 2>&1 || true
           fi
 
           mkdir -p .github/badges
